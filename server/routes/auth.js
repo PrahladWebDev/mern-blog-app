@@ -10,7 +10,7 @@ const router = express.Router();
 router.post(
     "/register",
     body("email").isEmail(),
-    body("password").isLength({ min: 6 }),
+    body("password").isLength({ min: 1 }),
     body("role").isIn(["user", "admin"]),
     async (req, res) => {
         const errors = validationResult(req);
