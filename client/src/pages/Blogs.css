@@ -1,0 +1,147 @@
+/* Blogs.css */
+
+/* Base styles */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #f4f4f9;
+  color: #333;
+}
+
+.blogs-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.blogs-heading {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #4a90e2;
+}
+
+.blogs-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+}
+
+.blog-card {
+  background: #fff;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.blog-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.blog-title {
+  font-size: 1.5rem;
+  color: #222;
+  margin: 10px 0;
+}
+
+.blog-content {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+.blog-likes-dislikes {
+  font-size: 0.9rem;
+  color: #888;
+  margin-top: 10px;
+}
+
+.user-feedback {
+  font-size: 0.9rem;
+  color: #4a90e2;
+  margin: 10px 0;
+}
+
+.read-more-link {
+  display: inline-block;
+  margin-top: 15px;
+  color: #fff;
+  background-color: #4a90e2;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: background-color 0.2s;
+}
+
+.read-more-link:hover {
+  background-color: #357ab8;
+}
+
+.delete-button,
+.edit-button {
+  margin-top: 15px;
+  margin-right: 10px;
+  padding: 10px 15px;
+  font-size: 0.9rem;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.delete-button {
+  background-color: #e74c3c;
+}
+
+.delete-button:hover {
+  background-color: #c0392b;
+}
+
+.edit-button {
+  background-color: #27ae60;
+}
+
+.edit-button:hover {
+  background-color: #1e8449;
+}
+
+.loading-message,
+.error-message,
+.no-blogs-message {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #666;
+  margin: 20px 0;
+}
+
+/* New styles for blog image */
+.blog-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 15px; /* Space between image and content */
+  object-fit: cover; /* Ensures the image covers the area without distortion */
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .blogs-heading {
+      font-size: 2rem;
+  }
+
+  .blog-title {
+      font-size: 1.3rem;
+  }
+
+  .read-more-link {
+      font-size: 0.8rem;
+  }
+}

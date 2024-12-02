@@ -1,0 +1,59 @@
+/* Dashboard.css */
+.dashboard-container {
+    margin: 20px auto;
+    max-width: 600px;
+    padding: 20px;
+    border: 2px solid #007bff;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-title {
+    font-size: 2rem;
+    color: #007bff;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.dashboard-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.dashboard-input,
+.dashboard-textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s ease;
+}
+
+.dashboard-input:focus,
+.dashboard-textarea:focus {
+    outline: none;
+    border-color: #007bff;
+}
+
+.dashboard-button {
+    padding: 10px;
+    font-size: 1.2rem;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.dashboard-button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.dashboard-button:hover:not(:disabled) {
+    background-color: #0056b3;
+}
