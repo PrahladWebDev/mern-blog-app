@@ -25,7 +25,12 @@ const BlogDetail = () => {
     const [dislikeBlog] = useDislikeBlogMutation(); // Hook for disliking the blog
 
     if (isLoading) return <p>Loading blog...</p>;
-    if (error) return <p>Failed to load blog.</p>;
+    if (error) return <p className="subscribe-message">
+    You need to subscribe to read the full content and post comments.
+    <button onClick={() => navigate("/subscribe")}>
+        Subscribe
+    </button>
+</p>;
 
     const handleCommentSubmit = async (e) => {
         e.preventDefault();
