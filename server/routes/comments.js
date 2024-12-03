@@ -34,7 +34,7 @@ router.get("/:blogId", async (req, res) => {
 
     try {
         const comments = await Comment.find({ blog: blogId })
-            .populate("user", "username")
+            .populate("user", "username email")
             .populate("blog", "title");
         res.status(200).json(comments);
     } catch (error) {
