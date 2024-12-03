@@ -97,6 +97,7 @@ const BlogDetail = () => {
                                 {comments?.length > 0 ? (
                                     comments.map((c) => (
                                         <li key={c._id} className="comment-item">
+                                            <strong>{c.user?.username}: </strong>
                                             <span>{c.content}</span>
                                             {role === "admin" && (
                                                 <button
