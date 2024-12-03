@@ -6,7 +6,7 @@ import { logout } from "../features/auth/authSlice";
 import "./Navbar.css"; // Import the CSS file
 
 const Navbar = () => {
-    const { isAuthenticated, role } = useSelector((state) => state.auth);
+    const { isAuthenticated, role, user } = useSelector((state) => state.auth); // Get username from Redux state
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -67,6 +67,12 @@ const Navbar = () => {
                                     <Link to="/subscribe" onClick={() => setIsMobileMenuOpen(false)}>
                                         Subscription
                                     </Link>
+                                </li>
+                            )}
+                            {/* Display username */}
+                            {user && (
+                                <li className="username-display">
+                                    <span>Welcome, {user.username}!</span>
                                 </li>
                             )}
                             <li>
