@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useRegisterMutation } from "../../app/apiSlice";
+import { useNavigate } from "react-router-dom";
 
 const Register = () => {
     const [username, setUsername] = useState("");
@@ -7,6 +8,7 @@ const Register = () => {
     const [password, setPassword] = useState("");
     const [role, setRole] = useState("user"); // Default role is 'user'
     const [register] = useRegisterMutation();
+    const navigate = useNavigate();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -14,6 +16,7 @@ const Register = () => {
             // Send the role along with other registration data
             await register({ username, email, password, role }).unwrap();
             alert("Registration successful! Please login.");
+            navigate("/login");
         } catch (err) {
             console.error("Registration failed:", err.message);
         }
