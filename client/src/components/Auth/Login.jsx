@@ -21,16 +21,15 @@ const Login = () => {
         try {
             const { token } = await login({ email, password }).unwrap();
             dispatch(setCredentials({ token }));
-    
-            // Navigate to different routes based on user role
-            navigate(decodedToken.role === "admin" ? "/admin-dashboard" : "/user-dashboard");
+
+            const decodedToken = JSON.parse(atob(token.split(".")[1]));
+            navigate(decodedToken.role === "admin" ? "/blogs" : "/blogs");
         } catch (err) {
             setError("Invalid email or password. Please try again.");
         } finally {
             setIsLoading(false);
         }
     };
-    
 
     return (
         <div className="login-container">
